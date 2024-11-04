@@ -1,0 +1,50 @@
+.auth-section {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .login-section {
+    background-color: #e7f1ff;
+  }
+  
+  .register-section {
+    background-color: #e9ffe9;
+  }
+  
+  .reset-section {
+    background-color: #fff9e7;
+  }
+  
+  .auth-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .auth-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  .forgot-password {
+    color: #ff8800;
+  }
+  
+  .register-link {
+    color: #28a745;
+  }
+  
+  .login-link {
+    color: #007bff;
+  }
+  
+  .d-none {
+    display: none;
+  }
+  
