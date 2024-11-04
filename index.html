@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magia Eterna Sullana</title>
+    <link rel="stylesheet" href="Principal.css">
+    <script type="module" src="firebaseconect.js"></script>
+</head>
+<body>
+    <header class="header">
+        <img src="Img/foto001.jpg" alt="Magia Eterna Sullana" class="logo">
+        <nav class="nav">
+            <a href="../Iniciasecion/login.html" class="login-link">Iniciar Sesión</a>
+            <a href="#" class="cart-link">Carrito de Compras</a>
+        </nav>
+    </header>
+    
+    <section class="main-section">
+        <h2 class="subtitle">Productos Artesanales y Arreglos</h2>
+        <div class="product-grid">
+            <div class="product-card" onclick="addToCart(1)">
+                <img src="../WebPrincipal/Img/foto1.png" alt="Producto 1" class="product-img">
+                <h3 class="product-name">Producto 1</h3>
+                <p class="product-price">$20.00</p>
+            </div>
+
+            <div class="product-card" onclick="addToCart(2)">
+                <img src="../WebPrincipal/Img/foto2.png" alt="Producto 2" class="product-img">
+                <h3 class="product-name">Producto 2</h3>
+                <p class="product-price">$30.00</p>
+            </div>
+
+            <div class="product-card" onclick="addToCart(3)">
+                <img src="../WebPrincipal/Img/foto3.png" alt="Producto 3" class="product-img">
+                <h3 class="product-name">Producto 3</h3>
+                <p class="product-price">$25.00</p>
+            </div>
+
+            <div class="product-card" onclick="addToCart(4)">
+                <img src="../WebPrincipal/Img/foto4.png" alt="Producto 4" class="product-img">
+                <h3 class="product-name">Producto 4</h3>
+                <p class="product-price">$35.00</p>
+            </div>
+            
+            <div class="product-card" onclick="addToCart(5)">
+                <img src="../WebPrincipal/Img/foto5.png"Producto 5" class="product-img">
+                <h3 class="product-name">Producto 5</h3>
+                <p class="product-price">$40.00</p>
+            </div>
+        </div>
+    </section>
+    
+    <script src="Principal.js"></script>
+</body>
+</html>
