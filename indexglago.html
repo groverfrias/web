@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Clases - UPAO Piura</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e9ecef;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.05) 10px,
+                rgba(255, 255, 255, 0.05) 20px
+            );
+            animation: shimmer 20s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .greeting {
+            font-size: 24px;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .message {
+            font-size: 16px;
+            color: #374151;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        
+        .info-card {
+            background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+            border-left: 6px solid #f97316;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.1);
+        }
+        
+        .info-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ea580c;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-title::before {
+            content: "📚";
+            margin-right: 10px;
+            font-size: 24px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .info-item {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(249, 115, 22, 0.2);
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #ea580c;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            color: #374151;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .student-info {
+            background: linear-gradient(135deg, #eff6ff 0%, #bfdbfe 100%);
+            border-left: 6px solid #3b82f6;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+        }
+        
+        .student-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .student-title::before {
+            content: "👨‍🎓";
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .student-details {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #fbbf24 0%, #f59e0b 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 25px 0;
+            font-weight: 600;
+            font-size: 18px;
+            box-shadow: 0 8px 16px rgba(245, 158, 11, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: slide 3s infinite;
+        }
+        
+        @keyframes slide {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .cta {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+        
+        .footer {
+            background: #f8fafc;
+            padding: 25px 30px;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .footer-text {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .university-name {
+            color: #1e3a8a;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header, .content, .footer {
+                padding: 20px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .greeting {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="https://calculadoraupao.com/wp-content/uploads/2023/10/logo_upao.png" alt="UPAO Logo" class="logo">
+            <h1>¡Bienvenido a UPAO!</h1>
+            <p>Universidad Privada Antenor Orrego - Sede Piura</p>
+        </div>
+        
+        <div class="content">
+            <div class="greeting">¡Hola Andrés! 👋</div>
+            
+            <div class="message">
+                Nos complace informarte que el inicio del ciclo académico está muy próximo. Tu dedicación y esfuerzo te han traído hasta aquí, y estamos emocionados de acompañarte en esta nueva etapa de tu formación profesional.
+            </div>
+            
+            <div class="student-info">
+                <div class="student-title">Información del Estudiante</div>
+                <div class="student-details">
+                    <div class="info-label">Estudiante</div>
+                    <div class="info-value">Andrés Mikhail Flores Delgado</div>
+                    <div class="info-label" style="margin-top: 10px;">ID Estudiante</div>
+                    <div class="info-value">000320762</div>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-title">Detalles del Inicio de Clases</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Fecha de Inicio</div>
+                        <div class="info-value">28 de Julio, 2025</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Carrera</div>
+                        <div class="info-value">Económico y Negocios Internacionales</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Ubicación</div>
+                        <div class="info-value">Pabellón A-127</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Sede</div>
+                        <div class="info-value">UPAO Piura</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                🎓 ¡Las clases inician el 28 de Julio en el Pabellón A-127! 🎓
+            </div>
+            
+            <div class="message">
+                Te recomendamos llegar con 15 minutos de anticipación para familiarizarte con las instalaciones. Recuerda traer tus materiales de estudio y una actitud positiva para comenzar este emocionante journey académico.
+            </div>
+            
+            <div class="cta">
+                <a href="#" class="cta-button">Confirmar Asistencia</a>
+            </div>
+            
+            <div class="message" style="margin-top: 30px; font-style: italic; color: #6b7280;">
+                Si tienes alguna pregunta o necesitas más información, no dudes en contactar a la oficina de admisiones. ¡Estamos aquí para apoyarte en cada paso de tu formación profesional!
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-text">
+                Este mensaje fue enviado por
+            </div>
+            <div class="university-name">
+                Universidad Privada Antenor Orrego - Sede Piura
+            </div>
+            <div class="footer-text" style="margin-top: 10px;">
+                Formando líderes con excelencia académica
+            </div>
+        </div>
+    </div>
+</body>
+</html>
